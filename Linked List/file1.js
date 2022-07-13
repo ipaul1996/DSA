@@ -78,6 +78,11 @@ class LinkedList
       var node = new Node(element);
       var current = this.head;
       var pcurrent = null;
+      if(current.data === pelement) {
+        node.next = current;
+        this.head = node;
+        return this.head;
+      }
       while(current.data !== pelement) {
         pcurrent = current;
         current = current.next; 

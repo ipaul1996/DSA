@@ -32,11 +32,13 @@ function Dequeue() {
 
 
 Enqueue(20)
-Enqueue(20)
-Enqueue(20)
-Enqueue(20)
-Enqueue(20)
-console.log(Enqueue(20)) //Overflow
+
+console.log(queue);
+Enqueue(30)
+Enqueue(40)
+Enqueue(50)
+Enqueue(60)
+console.log(Enqueue(70)) //Overflow
 
 
 
@@ -46,5 +48,7 @@ Dequeue();
 Dequeue();
 Dequeue();
 console.log(Dequeue());  //Underflow
+
+Enqueue(70)
 
 
