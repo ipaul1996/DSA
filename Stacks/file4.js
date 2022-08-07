@@ -7,51 +7,61 @@ class Stack
 
     constructor(...x) {
 
-        this.length = x.length;
+        if(x.length>size) {
 
-        if(this.length > size) {
+            this.length = size;
 
-            this.length = 0;
+            for(let i = 0; i<size; i++) {
+
+                this[i] = x[i];
+    
+            }
+    
+            console.log('Stack Overflow!');
+
+        } else {
+
+            this.length = x.length;
+
+            for(let i = 0; i<x.length; i++) {
+
+                this[i] = x[i];
+    
+            }
+
+        }
+        
+
+    }
+
+ 
+    Push(...element) {
+
+        if(this.length + element.length > size) {
+
+            for(let i = this.length; i<size; i++) {
+
+                this[i] = element[i-this.length];
+            }
+
+            this.length = size;
 
             console.log('Stack Overflow!');
 
-            return;
+        } else {
+
+            for(let i = this.length; i<this.length+element.length; i++) {
+
+                this[i] = element[i-this.length];
+
+            } 
+            
+            this.length+=element.length;
 
         }
 
-        for(let i = 0; i<x.length; i++) {
-
-            this[i] = x[i];
-
-        }
 
     }
- 
-    //Bug
-    // Push(...element) {
-
-    //     for(let i = 0; i < element.length; i++) {
-
-    //         let j = this.length;
-
-    //         let k = i + j;
-           
-    //         if(k > size) {
-
-    //             console.log('Stack Overflow!');
-
-    //             return;
-
-    //         }
-
-    //         this[k] = element[i];
-
-    //         this.length++;
-
-    //     }  
-
-
-    // }
 
 
     Pop() {
@@ -73,14 +83,14 @@ class Stack
 }
 
 
-let s1 = new Stack(1,2,3,4);
+let s1 = new Stack();
 
-s1.Pop()
+// s1.Pop()
 
 console.log(s1);
 
-s1.Push(5,6,7,8);
+s1.Push(5,6,7,8,9,10);
 
-s1.Push(5);
+// s1.Push(5);
 
 // s1.Pop();

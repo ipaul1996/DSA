@@ -158,6 +158,29 @@ class LinkedList
          return temp.next.data;
     }
 
+
+    middleNodeLinkedListTwoPointer() {
+
+        if(this.head === null || this.head.next === null || this.head.next.next === null) {
+
+            return;
+        }
+
+        let fast = this.head;
+
+        let slow = this.head;
+
+        while(fast !== null && fast.next !== null) {
+
+            fast = fast.next.next;
+
+            slow = slow.next;
+
+        }
+
+        return slow.data;
+    }
+
     
 }
 
@@ -172,26 +195,29 @@ l1.insertNodeAtTail(5);
 
 l1.insertNodeAtTail(10);
 
-l1.insertNodeAtTail(15);
+// l1.insertNodeAtTail(15);
 
-l1.insertNodeAtTail(20);
+// l1.insertNodeAtTail(20);
 
-l1.insertNodeAtTail(25);
+// l1.insertNodeAtTail(25);
 
-l1.insertNodeAtTail(30);
+// l1.insertNodeAtTail(30);
 
-l1.insertNodeAtTail(45);
+// l1.insertNodeAtTail(45);
 
+
+// l1.printList()
+
+// console.log('*********************************');
+
+
+// l1.reverseLinkedList();
 
 l1.printList()
 
-console.log('*********************************');
+// console.log(l1.middleNodeLinkedListIte());
 
+console.log(l1.middleNodeLinkedListTwoPointer());
 
-l1.reverseLinkedList();
-
-l1.printList()
-
-console.log(l1.middleNodeLinkedListIte());
 
 

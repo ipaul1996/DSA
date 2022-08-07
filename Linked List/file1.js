@@ -128,8 +128,7 @@ class LinkedList
       var node = new Node(element);
 
       var current = this.head;
-
-      
+     
       var pcurrent = null;
 
       if(current.data === pelement) {

@@ -56,6 +56,18 @@ class Stack
 
     }
 
+    Peek() {
+
+        if(this.length === 0) {
+
+            console.log('Stack is Empty');
+
+        }
+
+        return this.stack[this.length-1];
+        
+    }
+
 }
 
 let s1 = new Stack();
